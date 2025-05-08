@@ -1,4 +1,5 @@
-<<<<<<< HEAD
+<<<<<<< H![Uploading screencapture-9000-firebase-studio-1746696016037-cluster-44kx2eiocbhe2tyk3zoyo3ryuo-cloudworkstations-dev-2025-05-09-01_07_49.png…]()
+EAD
 
 # TextRefine.AI
 
