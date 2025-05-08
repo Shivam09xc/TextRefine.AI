@@ -67,7 +67,7 @@ export default function TextRefinerForm() {
 
   return (
     <div className="w-full max-w-2xl mx-auto">
-      <Card className="shadow-lg rounded-xl">
+      <Card className="shadow-lg rounded-xl transition-all duration-300 hover:shadow-2xl">
         <CardHeader>
           <CardTitle className="text-2xl">Refine Your Text</CardTitle>
           <CardDescription>Enter text and an optional tone, and let AI enhance it for clarity and conciseness.</CardDescription>
@@ -84,7 +84,7 @@ export default function TextRefinerForm() {
                     <FormControl>
                       <Textarea
                         placeholder="Enter your text here..."
-                        className="min-h-[150px] resize-y rounded-md"
+                        className="min-h-[150px] resize-y rounded-md focus:ring-primary focus:border-primary transition-shadow"
                         {...field}
                       />
                     </FormControl>
@@ -99,7 +99,11 @@ export default function TextRefinerForm() {
                   <FormItem>
                     <FormLabel>Desired Tone (Optional)</FormLabel>
                     <FormControl>
-                      <Input placeholder="e.g., formal, friendly, persuasive" {...field} className="rounded-md"/>
+                      <Input 
+                        placeholder="e.g., formal, friendly, persuasive" 
+                        {...field} 
+                        className="rounded-md focus:ring-primary focus:border-primary transition-shadow"
+                      />
                     </FormControl>
                     <FormDescription>
                       Leave blank for a general refinement.
@@ -108,7 +112,7 @@ export default function TextRefinerForm() {
                   </FormItem>
                 )}
               />
-              <Button type="submit" className="w-full rounded-md" disabled={isLoading}>
+              <Button type="submit" className="w-full rounded-md transition-transform hover:scale-[1.02]" disabled={isLoading}>
                 {isLoading ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -124,7 +128,7 @@ export default function TextRefinerForm() {
       </Card>
 
       {error && !isLoading && (
-        <Card className="mt-6 bg-destructive/10 border-destructive rounded-xl">
+        <Card className="mt-6 bg-destructive/10 border-destructive rounded-xl animate-in fade-in duration-300">
           <CardHeader>
             <CardTitle className="text-destructive">Refinement Error</CardTitle>
           </CardHeader>
@@ -135,7 +139,7 @@ export default function TextRefinerForm() {
       )}
 
       {refinedText && !isLoading && (
-        <Card className="mt-6 rounded-xl">
+        <Card className="mt-6 rounded-xl animate-in fade-in duration-300">
           <CardHeader>
             <CardTitle>Refined Text</CardTitle>
           </CardHeader>
