@@ -2,10 +2,9 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Sparkles, Edit3, MessageSquareQuote, PlayCircle } from 'lucide-react'; // Replaced Scissors with Edit3, Smile with MessageSquareQuote for better fit
+import { Sparkles, Edit3, MessageSquareQuote } from 'lucide-react'; // Removed PlayCircle
 
 export default function LandingPageContent() {
   const features = [
@@ -83,19 +82,17 @@ export default function LandingPageContent() {
           <p className="text-lg text-muted-foreground text-center mb-12 max-w-xl mx-auto">
             Watch a quick demo to see how easily you can elevate your writing.
           </p>
-          <div className="aspect-video max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl relative group bg-slate-800 hover:shadow-primary/20 transition-shadow duration-300">
-            <Image
-              src="https://picsum.photos/1280/720?grayscale"
-              alt="Video placeholder"
-              layout="fill"
-              objectFit="cover"
-              className="transition-transform duration-500 group-hover:scale-105"
-              data-ai-hint="product demo"
+          <div className="aspect-video max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl relative bg-slate-800">
+            <video
+              src="https://www.w3schools.com/html/mov_bbb.mp4" // Standard placeholder MP4 video
+              poster="https://picsum.photos/1280/720?grayscale" // Using the previous placeholder image as a poster
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
+              aria-label="Product demo video of TextRefine AI"
             />
-            <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/10 transition-colors">
-              <PlayCircle className="w-20 h-20 text-white/80 group-hover:text-white transition-all duration-300 group-hover:scale-110 cursor-pointer" />
-            </div>
-             {/* In a real app, clicking this would open a modal with an embedded video player */}
           </div>
         </div>
       </section>
